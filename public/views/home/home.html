@@ -1,0 +1,31 @@
+
+<div class="col s12 text-center">
+  <form ng-submit="search()">
+    <div class="row center">
+      <div class="col s4 offset-s4">
+        <div class="input-field">
+          <input id="hash_search" type="text" ng-model="words">
+          <label for="hash_search">Search Hashtags</label>
+        </div>
+      </div>
+    </div>
+    <div class="row center">
+      <div class="input-group-btn">
+        <button type="submit" class="waves-effect waves-light btn">Search</button>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="card-panel" ng-show="hashesSearched">
+      <div id="tags" class="clearfix">
+        <div ng-repeat="(tag, size) in tags track by $index" style="font-size: {{size}}px; color: {{randColor[$index]}}" class="tag" ng-model="tagBox"><span ng-click="includeInTweet(tag)">{{tag}}</span></div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row center">
+    <textarea ng-model="tweet" class="z-depth-2" rows="10"></textarea><br>
+    <button ng-click="sendTweet()" class="waves-effect waves-light btn tweet-button">tweet</button>
+  </div>
+</div>

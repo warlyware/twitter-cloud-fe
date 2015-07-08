@@ -7,16 +7,16 @@ html(lang='en', ng-app='sif')
     title #Cloud
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
-
     link(rel='stylesheet', href='/styles.css')
     link(rel='shortcut icon', href='/favicon.ico')
   body
-    include views/nav/nav
+    nav
+      .navbar-wrapper(ng-controller='NavCtrl')
+        a.brand-logo(ui-sref='home') #Cloud
     .container
       .row
         .col.s12
-          div(ui-view)
-
+          div(ui-view='')
     script(src='./packages/jquery/dist/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
     script(src='./packages/lodash/lodash.min.js')
