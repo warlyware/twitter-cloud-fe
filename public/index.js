@@ -5,7 +5,7 @@ var app = angular.module('sif', ['firebase', 'ui.router']);
 
 
 app.controller("HomeCtrl", function($scope, $http) {
-  $scope.tags = [], $scope.tweet = '', $scope.hashesSearched = false;
+  $scope.tags = [], $scope.tweet = '';
 
   var wordsArr = [];
   $scope.search = function() {
@@ -17,14 +17,12 @@ app.controller("HomeCtrl", function($scope, $http) {
       });
       $scope.tags = data;
     });
-    $scope.hashesSearched = true;
   }
 
 
   $scope.sendTweet = function() {
-    $http.post('http://localhost:8001/tweet', {tweet: $scope.tweet}).success(function(res) {
+    $http.post('http://localhost:8001/tweet', {tweet: scope.tweet}).success(function(res) {
       console.log(res)
-      $scope.tweet = '';
     });
   }
 
