@@ -5,7 +5,7 @@ var app = angular.module('sif', ['firebase', 'ui.router']);
 
 
 app.controller("HomeCtrl", function($scope, $http) {
-  $scope.tags = [], $scope.tweet = '';
+  $scope.tags = [], $scope.tweet = '', $scope.hashesSearched = false;
 
   var wordsArr = [];
   $scope.search = function() {
@@ -16,6 +16,7 @@ app.controller("HomeCtrl", function($scope, $http) {
         colors_returned: wordsArr.length
       });
       $scope.tags = data;
+      $scope.hashesSearched = true;
     });
   }
 

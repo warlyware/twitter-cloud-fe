@@ -1,8 +1,9 @@
 input {
-  text-align: center;
   margin-top: 20px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 5px;   
 }
+
 
 .brand-logo {
   margin-left: -5px !important;
@@ -25,10 +26,6 @@ button.tweet-button {
 
 nav {
   background-color: #35a6ff; }
-
-input {
-  margin-top: 20px;
-  margin-bottom: 5px !important; }
 
 textarea {
   border: 1px solid rgba(164, 164, 164, 0.38);
