@@ -1,6 +1,21 @@
-$size: 100px;
+input {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
 
-.logos > img{
-  max-width: $size;
-  max-height: 100px;
+.brand-logo {
+  margin-left: 15px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+#tags {
+  .tag {
+    float: left;
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 15px;
+  }
 }

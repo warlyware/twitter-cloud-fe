@@ -1,11 +1,15 @@
-.col-xs-12.text-center
-  img(src='http://vignette2.wikia.nocookie.net/avengersalliance/images/5/55/Modern_Armor_Sif_Portrait_Art.png/revision/latest?cb=20130804051517')
-h1.text-center Sif
-h3.text-center A more robust Angular template using:
-.row.text-center
-  .col-xs-12.logos
-    img(src='https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png')
-    img(src='http://www.ocpsoft.org/wp-content/uploads/2013/01/angularjs.png')
-    img(src='https://blog.codepen.io/wp-content/uploads/2013/09/jade-logo.png')
-    img(src='http://ace-subido.github.io/css3-microsoft-metro-buttons/img/bootstrap.png')
-    img(src='http://ih1.redbubble.net/image.77286395.7042/sticker,375x360.png')
+.col.s12.text-center
+  .row.center
+    form(ng-submit='search()')
+      .input-group
+        input.form-control(placeholder='List of #words' ng-model='words')
+        .input-group-btn
+          button.btn.btn-default(type="submit") Go
+
+    .card-panel
+      #tags.clearfix
+        .tag(ng-repeat="(tag, size) in tags track by $index" style="font-size: {{size}}px; color: {{randColor[$index]}}") {{tag}}
+          span(ng-click='includeInTweet(tag)')
+
+//- textarea(placeholder='tweet here', ng-model='tweet')
+//- button(ng-click='sendTweet()')
